@@ -25,29 +25,30 @@ class NestedSetModelConverter:
 
         return relationships
 
-# Example usage
-hierarchical_data = [
-    {'id': 1, 'name': 'Root', 'children': [
-        {'id': 2, 'name': 'Child 1'},
-        {'id': 3, 'name': 'Child 2', 'children': [
-            {'id': 4, 'name': 'Grandchild 1'},
-            {'id': 5, 'name': 'Grandchild 2'}
+if __name__ == "__main__":
+    # Example usage
+    hierarchical_data = [
+        {'id': 1, 'name': 'Root', 'children': [
+            {'id': 2, 'name': 'Child 1'},
+            {'id': 3, 'name': 'Child 2', 'children': [
+                {'id': 4, 'name': 'Grandchild 1'},
+                {'id': 5, 'name': 'Grandchild 2'}
+            ]}
         ]}
-    ]}
-]
+    ]
 
-converter = NestedSetModelConverter()
+    converter = NestedSetModelConverter()
 
-# Convert hierarchical data to nested set model
-converter.convert_to_nested_set(hierarchical_data)
+    # Convert hierarchical data to nested set model
+    converter.convert_to_nested_set(hierarchical_data)
 
-# Retrieve parent-child relationships from the nested set model
-relationships = converter.retrieve_parent_child_relationships(hierarchical_data)
+    # Retrieve parent-child relationships from the nested set model
+    relationships = converter.retrieve_parent_child_relationships(hierarchical_data)
 
-# Returns nested list representation
-print("Nested Set Model:")
-print(hierarchical_data)
+    # Returns nested list representation
+    print("Nested Set Model:")
+    print(hierarchical_data)
 
-# Returns adjacency list
-print("\nParent-Child Relationships:")
-print(relationships)
+    # Returns adjacency list
+    print("\nParent-Child Relationships:")
+    print(relationships)
